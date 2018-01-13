@@ -2,6 +2,7 @@ package com.emelib.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.util.List;
 @Entity
 public class Account {
@@ -9,6 +10,7 @@ public class Account {
     private int id;
     private String login;
     private String password;
+    @ManyToMany
     private List<Book> books;
 
     public int getId() {
