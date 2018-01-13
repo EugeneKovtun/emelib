@@ -7,6 +7,9 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
     <display-name>Archetype Created Web Application</display-name>
+    <!--<welcome-file-list>-->
+        <!--<welcome-file>index.html</welcome-file>-->
+    <!--</welcome-file-list>-->
     <servlet>
         <servlet-name>registrationServlet</servlet-name>
         <servlet-class>com.emelib.servlets.RegistrationServlet</servlet-class>
@@ -15,6 +18,10 @@
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>com.emelib.servlets.LoginServlet</servlet-class>
     </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>mainServlet</servlet-name>-->
+        <!--<servlet-class>com.emelib.servlets.MainServlet</servlet-class>-->
+    <!--</servlet>-->
 
     <servlet-mapping>
         <servlet-name>registrationServlet</servlet-name>
@@ -24,4 +31,8 @@
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>mainServlet</servlet-name>-->
+        <!--<url-pattern>/</url-pattern>-->
+    <!--</servlet-mapping>-->
 </web-app>
