@@ -1,21 +1,24 @@
 package com.emelib.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author eugene
+ */
 @Entity
 public class Book {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String author;
-    private File file;
+    private String file;
     private int price;
     @ManyToMany(mappedBy = "books")
-    private List<Account> accounts;
+    private List<Account> accounts = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -41,11 +44,11 @@ public class Book {
         this.author = author;
     }
 
-    public File getFile() {
+    public String getFile() {
         return file;
     }
 
-    public void setFile(File file) {
+    public void setFile(String file) {
         this.file = file;
     }
 
