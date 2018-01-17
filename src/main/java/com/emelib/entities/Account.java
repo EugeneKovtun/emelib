@@ -1,17 +1,22 @@
 package com.emelib.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * @author eugene
+ */
 @Entity
 public class Account {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column(unique = true)
     private String login;
     private String password;
     @ManyToMany
-    private List<Book> books;
+    private List<Book> books = new ArrayList<>();
 
     public int getId() {
         return id;
