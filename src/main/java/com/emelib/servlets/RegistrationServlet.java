@@ -17,17 +17,21 @@ public class RegistrationServlet extends HttpServlet {
         String login = req.getParameter("login");
         String password = req.getParameter("password");
         try {
+            if (login.length()<2||password.length()<2){
+                throw new Exception();
+            }
             Account account = new Account();
             account.setLogin(login);
             account.setPassword(password);
             UserDAO.addUser(account);
-            req.getRequestDispatcher("index.html").forward(req,resp);
+            req.getRequestDispatcher("Success.jsp").forward(req,resp);
             //req.getRequestDispatcher("signInUp/success.html").forward(req, resp);
 
         }
         catch (Exception e){
             e.printStackTrace();
-            req.getRequestDispatcher("signInUp/index.html").forward(req, resp);
+            resp.sendRedirect(req.getContextPath() + "/signInUp");
+//            req.getRequestDispatcher("/signInUp").forward(req, resp);
         }
     }
 }
