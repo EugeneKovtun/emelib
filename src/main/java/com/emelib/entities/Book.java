@@ -16,6 +16,7 @@ public class Book {
     private String name;
     private String author;
     private String file;
+    private String description;
     private int price;
     @ManyToMany(mappedBy = "books")
     private List<Account> accounts = new ArrayList<>();
@@ -52,6 +53,14 @@ public class Book {
         this.file = file;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public int getPrice() {
         return price;
     }
@@ -66,5 +75,18 @@ public class Book {
 
     public void setAccounts(List<Account> accounts) {
         this.accounts = accounts;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", file='" + file + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+//                ", accounts=" + accounts +
+                '}';
     }
 }
