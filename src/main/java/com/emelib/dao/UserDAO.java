@@ -69,5 +69,21 @@ public class UserDAO {
         transaction.commit();
         return accounts;
     }
+    public static void addBookToUser(Book book, Account account){
+        Configuration configuration = new Configuration()
+                .configure().addAnnotatedClass(Book.class)
+                .addAnnotatedClass(Account.class);
+        ServiceRegistry registry =
+                new StandardServiceRegistryBuilder()
+                        .applySettings(configuration.getProperties())
+                        .build();
+        SessionFactory sessionFactory = configuration.buildSessionFactory(registry);
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+            account.getBooks().add(book);
+            book.getAccounts().add(account);
+            session.merge(account);
 
+        transaction.commit();
+    }
 }
