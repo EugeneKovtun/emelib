@@ -20,7 +20,7 @@ public class BookUtils {
             return buffer;
         } else {
             buffer.setLength((int) (buffer.length() * 0.2));
-            buffer.append("\nTo Read next byu this book");
+            buffer.append("\nTo Read next buy this book");
             return buffer;
         }
     }

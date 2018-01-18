@@ -22,7 +22,7 @@
 <div class="bk">
     ${name}
 </div>
-<textarea class="TEXT" rows=150 cols=155>
+<textarea class="TEXT" rows=150 cols=130>
     ${text}
 </textarea>
 </body>

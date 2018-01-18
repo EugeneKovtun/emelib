@@ -55,7 +55,7 @@
                         <input name="login" type="text" placeholder="Your login"/>
                     </div>
                     <div class="inputWrapper">
-                        <input name="password" type="text" placeholder="Your password"/>
+                        <input name="password" type="password" placeholder="Your password"/>
                     </div>
                 </div>
                 <div class="sog">

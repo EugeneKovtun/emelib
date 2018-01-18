@@ -42,7 +42,7 @@
 
 
   <div class="name">
-      Название Книги:
+      Имя Книги:
   </div>
 
   <div class="nameMain">
@@ -54,7 +54,7 @@
   </div>
 
   <div class="authorMain">
-      ${autor}
+      ${author}
   </div>
 
   <div class="desc">

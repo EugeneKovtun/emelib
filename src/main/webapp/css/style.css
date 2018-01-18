@@ -527,7 +527,7 @@ button {
 .user {
     position: absolute; /* ���������� ���������������� */
     top: 50%; /* ��������� �� ������� ���� */
-    left: 4%;
+    left: 7%;
     font: 33px bold italic sans-serif;
     color: orange;
     font-weight: bold;
@@ -593,9 +593,8 @@ button {
 .TEXT {
     padding: 2%;
     position: absolute; /* ���������� ���������������� */
+    left: 8%;
     top: 15%; /* ��������� �� ������� ���� */
-    left: 9%;
-    right: 15%;
     bottom: 10%;
 }
 
