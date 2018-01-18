@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 
 public class BookUtils {
     public static String getBookLink(Book book) {
-        return "<a href=\"/book?id=" + book.getId() + "\">" + book.getName() + "</a>";
+        return "<a class=\"book\" href=\"/book?id=" + book.getId() + "\">" + book.getName() + "</a>";
     }
 
     public static StringBuffer getBookText(Book book, boolean isAvailable) throws IOException {
