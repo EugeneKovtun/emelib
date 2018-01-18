@@ -9,6 +9,9 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import java.util.Collections;
+import java.util.List;
+
 public class UserDAO {
     public static void addUser(Account account) {
         Configuration configuration = new Configuration()
@@ -23,6 +26,48 @@ public class UserDAO {
         Transaction transaction = session.beginTransaction();
         session.save(account);
         transaction.commit();
+    }
+
+    public static Account getById(int id) {
+        Configuration configuration = new Configuration()
+                .configure().addAnnotatedClass(Book.class)
+                .addAnnotatedClass(Account.class);
+        ServiceRegistry registry =
+                new StandardServiceRegistryBuilder()
+                        .applySettings(configuration.getProperties())
+                        .build();
+        SessionFactory sessionFactory = configuration.buildSessionFactory(registry);
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        Account account = session.get(Account.class, id);
+        transaction.commit();
+        return account;
+    }
+
+    public static int getIdByLogin(String login, String password) throws Exception {
+        List<Account> accounts = getAll();
+        for (Account account:accounts) {
+            if (account.getLogin().equals(login)&&account.getPassword().equals(password)){
+                return account.getId();
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    private static List<Account> getAll() {
+        Configuration configuration = new Configuration()
+                .configure().addAnnotatedClass(Book.class)
+                .addAnnotatedClass(Account.class);
+        ServiceRegistry registry =
+                new StandardServiceRegistryBuilder()
+                        .applySettings(configuration.getProperties())
+                        .build();
+        SessionFactory sessionFactory = configuration.buildSessionFactory(registry);
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        List<Account> accounts = session.createCriteria(Account.class).list();
+        transaction.commit();
+        return accounts;
     }
 
 }
