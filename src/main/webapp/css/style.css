@@ -1,0 +1,618 @@
+[class^="icon"], [class*=" icon"] {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+.iconLogin:before {
+    content: "\f090";
+}
+
+.iconRegister:before {
+    content: "\f067";
+}
+
+.iconForgot:before {
+    content: "\f128";
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.patternwall {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+body {
+    font: 12px/22px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: url(../images/005.png) left top;
+}
+
+.clear {
+    clear: both;
+}
+
+.box {
+    width: 300px;
+    margin: 120px auto;
+    position: absolute;
+    top: 15%;
+    left: 37%;
+    z-index: 1;
+}
+
+.tabs {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: -34px;
+}
+
+.tabs a {
+    position: relative;
+    height: 30px;
+    width: 36px;
+    display: block;
+    margin-bottom: 10px;
+    padding-top: 3px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    -webkit-box-shadow: 0 0 2px #1a1a1a;
+    -moz-box-shadow: 0 0 2px #1a1a1a;
+    box-shadow: 0 0 2px #1a1a1a;
+}
+
+.tabs a.active, .tabs a:hover {
+    margin-left: -3px;
+}
+
+.tabs a:before {
+    font-size: 14px;
+    color: white;
+    padding-left: 10px;
+}
+
+.blueBox {
+    color: white;
+    border: solid 1px #0083ff;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0083ff), color-stop(100%, #0073e0));
+    background: -webkit-linear-gradient(#0083ff, #0073e0);
+    background: -moz-linear-gradient(#0083ff, #0073e0);
+    background: -o-linear-gradient(#0083ff, #0073e0);
+    background: linear-gradient(#0083ff, #0073e0);
+    cursor: pointer;
+}
+
+.greenBox {
+    color: white;
+    border: solid 1px #57c100;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #58c400), color-stop(100%, #4aa500));
+    background: -webkit-linear-gradient(#58c400, #4aa500);
+    background: -moz-linear-gradient(#58c400, #4aa500);
+    background: -o-linear-gradient(#58c400, #4aa500);
+    background: linear-gradient(#58c400, #4aa500);
+    cursor: pointer;
+}
+
+.redBox {
+    color: white;
+    border: solid 1px #e50000;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e50000), color-stop(100%, #c90000));
+    background: -webkit-linear-gradient(#e50000, #c90000);
+    background: -moz-linear-gradient(#e50000, #c90000);
+    background: -o-linear-gradient(#e50000, #c90000);
+    background: linear-gradient(#e50000, #c90000);
+    cursor: pointer;
+}
+
+.redBox:hover, .greenBox:hover, .blueBox:hover {
+    opacity: 0.9;
+}
+
+.containerWrapper {
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+    height: 250px;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+}
+
+.tabContainer {
+    height: 250px;
+    display: none;
+    border: solid 1px white;
+    padding: 20px;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+    background-image: -webkit-linear-gradient(#ffffff, #dddddd);
+    background-image: -moz-linear-gradient(#ffffff, #dddddd);
+    background-image: -o-linear-gradient(#ffffff, #dddddd);
+    background-image: linear-gradient(#ffffff, #dddddd);
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+}
+
+.tabContainer.active {
+    display: block;
+}
+
+.loginTitle {
+    color: #4d4d4d;
+    margin: 0 0 20px 0;
+    padding: 0 0 15px 0;
+    border-bottom: solid 1px #e6e6e6;
+    text-shadow: 1px 1px 0 white;
+}
+
+.placeholder {
+    height: 32px;
+    margin-bottom: 20px;
+}
+
+.inputWrapper {
+    height: 32px;
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.inputWrapper:before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-left: solid 1px #cccccc;
+    border-right: solid 1px #cccccc;
+    border-bottom: solid 1px #cccccc;
+}
+
+form h2 {
+    font-family: Tahoma;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    color: #4d4d4d;
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+    border: none;
+    background: none;
+    padding: 0 10px;
+    font-size: 16px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    outline: none;
+    border: none;
+    border: 1px solid #cccccc;
+}
+
+button {
+    float: right;
+    color: white;
+    height: 32px;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+.top {
+    color: red;
+    font: 24px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic; /* ��������� ���������� */
+    color: red; /* ���� ������ */
+    text-align: right;
+    border: 3px solid orange; /* ��������� ������� */
+    text-decoration: none;
+    position: absolute; /* ���������� ���������������� */
+    top: 2%; /* ��������� �� ������� ���� */
+    right: 3%; /* ��������� �� ������� ���� */
+    padding: 10px;
+
+}
+
+.top1 {
+    color: red;
+    font: 24px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic; /* ��������� ���������� */
+    color: red; /* ���� ������ */
+    text-align: right;
+    border: 3px solid orange; /* ��������� ������� */
+    text-decoration: none;
+    position: absolute; /* ���������� ���������������� */
+    top: 2%; /* ��������� �� ������� ���� */
+    right: 10%; /* ��������� �� ������� ���� */
+    padding: 10px;
+
+}
+
+.topTxt {
+    color: red;
+    font: 24px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic; /* ��������� ���������� */
+    color: red; /* ���� ������ */
+    text-align: right;
+    border: 3px solid orange; /* ��������� ������� */
+    text-decoration: none;
+    position: absolute; /* ���������� ���������������� */
+    top: 2%; /* ��������� �� ������� ���� */
+    right: 11%; /* ��������� �� ������� ���� */
+    padding: 10px;
+
+}
+
+.topper {
+    right: 3%;
+    color: yellow;
+    height: 186px;
+    text-align: right;
+    /*background: url(../images/eme.png) left top;*/
+}
+
+.sign {
+    position: absolute; /* ���������� ���������������� */
+    top: 10%; /* ��������� �� ������� ���� */
+    right: 55%; /* ��������� �� ������� ���� */
+    float: center; /* ������������ �� ������� ���� */
+    /*border: 1px solid #333; /* ��������� ����� */
+    /*padding: 7px; /* ���� ������ ����� */
+    margin: 5% 0 5px 5px; /* ������� ������ */
+    /*background: #f0f0f0; /* ���� ���� */
+}
+
+.signa {
+
+    text-decoration: none;
+    color: orange;
+    font: 24px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0 auto 3px; /* ������� ������ ������ */
+}
+
+.signaMain {
+    border: 2px solid aqua; /* ��������� ������� */
+    padding: 4px; /* ���� ������ ����� */
+    text-decoration: none;
+    color: aqua;
+    font: 24px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0 auto 3px; /* ������� ������ ������ */
+}
+
+.sign1 {
+    position: absolute; /* ���������� ���������������� */
+    top: 10%; /* ��������� �� ������� ���� */
+    right: 40%; /* ��������� �� ������� ���� */
+    float: center; /* ������������ �� ������� ���� */
+    /*border: 1px solid #333; /* ��������� ����� */
+    /*padding: 7px; /* ���� ������ ����� */
+    margin: 5% 0 5px 5px; /* ������� ������ */
+    /*background: #f0f0f0; /* ���� ���� */
+}
+
+.signa1 {
+    border: 2px solid aqua; /* ��������� ������� */
+    padding: 4px; /* ���� ������ ����� */
+    text-decoration: none;
+    font: 24px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    color: aqua;
+    margin: 0 auto 3px; /* ������� ������ ������ */
+}
+
+.signa1Main {
+
+    text-decoration: none;
+    font: 24px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    color: orange;
+    margin: 0 auto 3px; /* ������� ������ ������ */
+}
+
+.signaInfo {
+    text-decoration: none;
+    font: 24px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    color: orange;
+    margin: 0 auto 3px; /* ������� ������ ������ */
+}
+
+.signa1Info {
+
+    text-decoration: none;
+    font: 24px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    color: orange;
+    margin: 0 auto 3px; /* ������� ������ ������ */
+}
+
+.txt {
+    /*padding: 4px; /* ���� ������ ����� */
+    /*border: 3px dotted orange; /* ��������� ������� */
+    position: absolute; /* ���������� ���������������� */
+    top: 50%; /* ��������� �� ������� ���� */
+    right: 20%; /* ��������� �� ������� ���� */
+    /*background:url(../images/images.jpg) left top;*/
+    color: orange;
+    font: 18px bold italic sans-serif;
+    font-weight: bold;
+}
+
+.var1 {
+    position: absolute; /* ���������� ���������������� */
+    top: 15%; /* ��������� �� ������� ���� */
+    left: 3%;
+}
+
+.var2 {
+    position: absolute; /* ���������� ���������������� */
+    top: 15%; /* ��������� �� ������� ���� */
+    right: 6%;
+}
+
+.var3 {
+    /*font: 18px bold italic sans-serif;
+    font-weight: bold;*/
+    position: absolute; /* ���������� ���������������� */
+    bottom: 0%; /* ��������� �� ������� ���� */
+    right: 3%;
+}
+
+.name {
+    position: absolute; /* ���������� ���������������� */
+    top: 50%; /* ��������� �� ������� ���� */
+    left: 28%;
+    font: 28px bold italic sans-serif;
+    color: orange;
+    font-weight: bold;
+}
+
+.author {
+    position: absolute; /* ���������� ���������������� */
+    top: 57%; /* ��������� �� ������� ���� */
+    left: 28%;
+    font: 28px bold italic sans-serif;
+    color: orange;
+    font-weight: bold;
+}
+
+.desc {
+    position: absolute; /* ���������� ���������������� */
+    top: 63%; /* ��������� �� ������� ���� */
+    left: 28%;
+    font: 28px bold italic sans-serif;
+    color: orange;
+    font-weight: bold;
+}
+
+.price {
+    position: absolute; /* ���������� ���������������� */
+    top: 87%; /* ��������� �� ������� ���� */
+    left: 28%;
+    font: 28px bold italic sans-serif;
+    color: orange;
+    font-weight: bold;
+}
+
+.nameMain {
+    position: absolute; /* ���������� ���������������� */
+    top: 50%; /* ��������� �� ������� ���� */
+    left: 40%;
+    font: 28px bold italic sans-serif;
+    text-decoration: underline;
+    color: aqua;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.authorMain {
+    position: absolute; /* ���������� ���������������� */
+    top: 57%; /* ��������� �� ������� ���� */
+    left: 42%;
+    font: 28px bold italic sans-serif;
+    text-decoration: underline;
+    color: aqua;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.descMain {
+    position: absolute; /* ���������� ���������������� */
+    top: 64%; /* ��������� �� ������� ���� */
+    left: 47%;
+    right: 22%;
+    font: 18px bold italic sans-serif;
+    color: aqua;
+    font-weight: bold;
+    /*font-style: italic;*/
+}
+
+.priceMain {
+    position: absolute; /* ���������� ���������������� */
+    top: 87%; /* ��������� �� ������� ���� */
+    left: 40%;
+    font: 28px bold italic sans-serif;
+    text-decoration: underline;
+    color: aqua;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.but {
+    position: absolute; /* ���������� ���������������� */
+    top: 94%; /* ��������� �� ������� ���� */
+    left: 28%;
+    color: orange;
+    font: 16px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    border: 2px solid grey; /* ��������� ������� */
+}
+
+.buy {
+    position: absolute; /* ���������� ���������������� */
+    top: 94%; /* ��������� �� ������� ���� */
+    left: 43%;
+    color: orange;
+    font: 16px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    border: 2px solid grey; /* ��������� ������� */
+}
+
+.ca {
+    position: absolute; /* ���������� ���������������� */
+    top: 50%; /* ��������� �� ������� ���� */
+    left: 28%;
+    font: 28px bold italic sans-serif;
+    color: orange;
+    font-style: italic;
+}
+
+.vv {
+    position: absolute; /* ���������� ���������������� */
+    top: 47%; /* ��������� �� ������� ���� */
+    left: 29%;
+    font: 33px bold italic sans-serif;
+    color: orange;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.book {
+    color: orange;
+    font: 26px bold italic sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.forBuy {
+    text-decoration: none;
+    color: orange;
+}
+
+.user {
+    position: absolute; /* ���������� ���������������� */
+    top: 50%; /* ��������� �� ������� ���� */
+    left: 4%;
+    font: 33px bold italic sans-serif;
+    color: orange;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.us {
+    position: absolute; /* ���������� ���������������� */
+    top: 20%; /* ��������� �� ������� ���� */
+    left: 5%;
+}
+
+.ex {
+    position: absolute; /* ���������� ���������������� */
+    top: 8%; /* ��������� �� ������� ���� */
+    left: 30%;
+    font: 48px bold italic sans-serif;
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.vv1 {
+    position: absolute; /* ���������� ���������������� */
+    top: 30%; /* ��������� �� ������� ���� */
+    left: 28%;
+    font: 33px bold italic sans-serif;
+    color: orange;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.lk {
+    position: absolute; /* ���������� ���������������� */
+    top: 34%; /* ��������� �� ������� ���� */
+    left: 27%;
+    font: 28px bold italic sans-serif;
+    color: orange;
+    font-style: italic;
+}
+
+.kl {
+    position: absolute; /* ���������� ���������������� */
+    top: 25%; /* ��������� �� ������� ���� */
+    right: 8%;
+    font: 28px bold italic sans-serif;
+    color: orange;
+    font-style: italic;
+}
+
+.bk {
+    position: absolute; /* ���������� ���������������� */
+    top: 3%; /* ��������� �� ������� ���� */
+    left: 38%;
+    font: 48px bold italic sans-serif;
+    color: orange;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.TEXT {
+    padding: 2%;
+    position: absolute; /* ���������� ���������������� */
+    top: 15%; /* ��������� �� ������� ���� */
+    left: 9%;
+    right: 15%;
+    bottom: 10%;
+}
+
+.sog {
+    font: 10px bold italic sans-serif;
+    color: grey;
+    position: absolute; /* ���������� ���������������� */
+    top: 70%; /* ��������� �� ������� ���� */
+    left: 9%;
+}
+
+.dogovor {
+    position: absolute; /* ���������� ���������������� */
+    top: 6%; /* ��������� �� ������� ���� */
+    left: 27%;
+    font: 48px bold italic sans-serif;
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+}
