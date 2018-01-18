@@ -7,9 +7,9 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
     <display-name>Archetype Created Web Application</display-name>
-    <!--<welcome-file-list>-->
-        <!--<welcome-file>index.html</welcome-file>-->
-    <!--</welcome-file-list>-->
+    <welcome-file-list>
+        <welcome-file>/</welcome-file>
+    </welcome-file-list>
     <servlet>
         <servlet-name>registrationServlet</servlet-name>
         <servlet-class>com.emelib.servlets.RegistrationServlet</servlet-class>
@@ -22,11 +22,23 @@
         <servlet-name>bookServlet</servlet-name>
         <servlet-class>com.emelib.servlets.BookServlet</servlet-class>
     </servlet>
-    <!--<servlet>-->
-        <!--<servlet-name>mainServlet</servlet-name>-->
-        <!--<servlet-class>com.emelib.servlets.MainServlet</servlet-class>-->
-    <!--</servlet>-->
-
+    <servlet>
+        <servlet-name>mainServlet</servlet-name>
+        <servlet-class>com.emelib.servlets.MainServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>signInUp</servlet-name>
+        <servlet-class>com.emelib.servlets.SignInUpServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>exit</servlet-name>
+        <servlet-class>com.emelib.servlets.ExitServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>catalog</servlet-name>
+        <servlet-class>com.emelib.servlets.CatalogServlet</servlet-class>
+    </servlet>
+    
     <servlet-mapping>
         <servlet-name>registrationServlet</servlet-name>
         <url-pattern>/registration</url-pattern>
@@ -39,8 +51,29 @@
         <servlet-name>bookServlet</servlet-name>
         <url-pattern>/book</url-pattern>
     </servlet-mapping>
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>mainServlet</servlet-name>-->
-        <!--<url-pattern>/</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>signInUp</servlet-name>
+        <url-pattern>/signInUp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>exit</servlet-name>
+        <url-pattern>/exit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>catalog</servlet-name>
+        <url-pattern>/catalog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mainServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.png</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
 </web-app>
