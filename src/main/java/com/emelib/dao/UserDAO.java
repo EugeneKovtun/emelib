@@ -26,6 +26,8 @@ public class UserDAO {
         Transaction transaction = session.beginTransaction();
         session.save(account);
         transaction.commit();
+        session.close();
+//        sessionFactory.close();
     }
 
     public static Account getById(int id) {
@@ -41,13 +43,15 @@ public class UserDAO {
         Transaction transaction = session.beginTransaction();
         Account account = session.get(Account.class, id);
         transaction.commit();
+        //session.close();
+//        sessionFactory.close();
         return account;
     }
 
     public static int getIdByLogin(String login, String password) throws Exception {
         List<Account> accounts = getAll();
-        for (Account account:accounts) {
-            if (account.getLogin().equals(login)&&account.getPassword().equals(password)){
+        for (Account account : accounts) {
+            if (account.getLogin().equals(login) && account.getPassword().equals(password)) {
                 return account.getId();
             }
         }
@@ -67,9 +71,12 @@ public class UserDAO {
         Transaction transaction = session.beginTransaction();
         List<Account> accounts = session.createCriteria(Account.class).list();
         transaction.commit();
+        session.close();
+//        sessionFactory.close();
         return accounts;
     }
-    public static void addBookToUser(Book book, Account account){
+
+    public static void addBookToUser(Book book, Account account) {
         Configuration configuration = new Configuration()
                 .configure().addAnnotatedClass(Book.class)
                 .addAnnotatedClass(Account.class);
@@ -80,10 +87,11 @@ public class UserDAO {
         SessionFactory sessionFactory = configuration.buildSessionFactory(registry);
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-            account.getBooks().add(book);
-            book.getAccounts().add(account);
-            session.merge(account);
-
+        account.getBooks().add(book);
+//        book.getAccounts().add(account);
+        session.merge(account);
         transaction.commit();
+        session.close();
+//        sessionFactory.close();
     }
 }

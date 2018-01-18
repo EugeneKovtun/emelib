@@ -1,5 +1,6 @@
 package com.emelib.utils;
 
+import com.emelib.dao.UserDAO;
 import com.emelib.entities.Book;
 
 import java.io.IOException;
@@ -23,4 +24,14 @@ public class BookUtils {
             return buffer;
         }
     }
+
+    public static boolean ifUserHaveBook(int bookId, int userID) {
+        for (Book book : UserDAO.getById(userID).getBooks()) {
+            if (book.getId() == bookId) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

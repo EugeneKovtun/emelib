@@ -59,4 +59,27 @@ public class Account {
                 ", books=" + books +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Account)) return false;
+
+        Account account = (Account) o;
+
+        if (getId() != account.getId()) return false;
+        if (getLogin() != null ? !getLogin().equals(account.getLogin()) : account.getLogin() != null) return false;
+        if (getPassword() != null ? !getPassword().equals(account.getPassword()) : account.getPassword() != null)
+            return false;
+        return getBooks() != null ? getBooks().equals(account.getBooks()) : account.getBooks() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getId();
+        result = 31 * result + (getLogin() != null ? getLogin().hashCode() : 0);
+        result = 31 * result + (getPassword() != null ? getPassword().hashCode() : 0);
+        result = 31 * result + (getBooks() != null ? getBooks().hashCode() : 0);
+        return result;
+    }
 }

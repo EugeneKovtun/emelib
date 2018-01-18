@@ -25,8 +25,11 @@ public class BookDAO {
         Transaction transaction = session.beginTransaction();
         session.save(book);
         transaction.commit();
+        session.close();
+        sessionFactory.close();
     }
-    public static Book getById(int id){
+
+    public static Book getById(int id) {
         Configuration configuration = new Configuration()
                 .configure().addAnnotatedClass(Book.class)
                 .addAnnotatedClass(Account.class);
@@ -37,10 +40,15 @@ public class BookDAO {
         SessionFactory sessionFactory = configuration.buildSessionFactory(registry);
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        Book book= session.get(Book.class, id);
+        Book book = session.get(Book.class, id);
         transaction.commit();
+        session.close();
+        sessionFactory.close();
+        session.close();
+//        sessionFactory.close();
         return book;
     }
+
     public static List<Book> getAll() {
         Configuration configuration = new Configuration()
                 .configure().addAnnotatedClass(Book.class)
@@ -54,6 +62,8 @@ public class BookDAO {
         Transaction transaction = session.beginTransaction();
         List<Book> books = session.createCriteria(Book.class).list();
         transaction.commit();
+        session.close();
+        sessionFactory.close();
         return books;
     }
 }

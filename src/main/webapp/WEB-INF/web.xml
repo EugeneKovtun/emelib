@@ -38,7 +38,34 @@
         <servlet-name>catalog</servlet-name>
         <servlet-class>com.emelib.servlets.CatalogServlet</servlet-class>
     </servlet>
-    
+    <servlet>
+        <servlet-name>personalArea</servlet-name>
+        <servlet-class>com.emelib.servlets.PersonalAreaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>contract</servlet-name>
+        <servlet-class>com.emelib.servlets.ContractServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>trade</servlet-name>
+        <servlet-class>com.emelib.servlets.TradeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>booktext</servlet-name>
+        <servlet-class>com.emelib.servlets.BookTextServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>booktext</servlet-name>
+        <url-pattern>/bookText</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>trade</servlet-name>
+        <url-pattern>/trade</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>contract</servlet-name>
+        <url-pattern>/contract</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>registrationServlet</servlet-name>
         <url-pattern>/registration</url-pattern>
@@ -62,6 +89,10 @@
     <servlet-mapping>
         <servlet-name>catalog</servlet-name>
         <url-pattern>/catalog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>personalArea</servlet-name>
+        <url-pattern>/personalArea</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>mainServlet</servlet-name>

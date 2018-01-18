@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
             int id = UserDAO.getIdByLogin(req.getParameter("login"), req.getParameter("password"));
             System.out.println(2);
             req.getSession().setAttribute("userID", id);
-            resp.sendRedirect(req.getContextPath() + "/");
+            resp.sendRedirect(req.getContextPath() + "/personalArea");
         } catch (IllegalArgumentException e) {
             System.out.println("Errr");
             resp.sendRedirect(req.getContextPath() + "/signInUp");
