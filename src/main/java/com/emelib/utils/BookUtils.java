@@ -3,10 +3,12 @@ package com.emelib.utils;
 import com.emelib.dao.UserDAO;
 import com.emelib.entities.Book;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class BookUtils {
     public static String getBookLink(Book book) {
@@ -15,7 +17,12 @@ public class BookUtils {
 
     public static StringBuffer getBookText(Book book, boolean isAvailable) throws IOException {
         StringBuffer buffer = new StringBuffer();
-        Files.lines(Paths.get(book.getFile()), StandardCharsets.UTF_8).forEach(buffer::append);
+//        Files.lines(Paths.get(book.getFile()), StandardCharsets.UTF_8).forEach(buffer::appendLn);
+        FileReader reader = new FileReader(book.getFile());
+        Scanner scanner = new Scanner(reader);
+        while (scanner.hasNextLine()){
+            buffer.append(scanner.nextLine()+'\n');
+        }
         if (isAvailable) {
             return buffer;
         } else {
